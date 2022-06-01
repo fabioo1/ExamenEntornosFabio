@@ -1,14 +1,14 @@
 /*
-*	grupo  :
-*	alumno :
-*	n.exp. :
-*	fecha  :
+*	grupo  : GDAM
+*	alumno : Fabio Garcia Garcia
+*	n.exp. : 7237
+*	fecha  : 01/06/2022
  */
 package Cheese;
 
 /**
  *
- * @author ___
+ * @author ___Fabio
  */
 public class Main {
     
