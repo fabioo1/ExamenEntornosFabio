@@ -42,7 +42,12 @@ public class ListaProductos {
     
         if (campo.replace(" ","") == "")  return true; else return false;
     }
-
+    
+    /**
+     * Comprueba si un producto está duplicado o no
+     * @param prod objeto a analizar
+     * @return null en el caso de que esté duplicado y el propio producto si no lo está
+     */
     public Producto addProducto(Producto prod) {
         
         if (listaP.containsKey(prod.getcode())) {
@@ -55,6 +60,11 @@ public class ListaProductos {
         return prod;
     }
 
+    /**
+     * Elimina el producto que se le indica como parámetro de entrada
+     * @param codigo cadena a analizar
+     * @return prod si la cadena a analizar no es null, sino devuelve null.
+     */
     public Producto eliminarProducto(String codigo) { 
         
         Producto prod = buscarProducto(codigo);
@@ -66,6 +76,14 @@ public class ListaProductos {
         return prod;
     }
 
+    /**
+     * Comprueba que si el producto no está en la lista con ese código le
+     * devolverá un valor nulo. En cambio, si está con ese código le devuelve
+     * el producto con ese código.
+     * @param codigo caden a analizar
+     * @return null: si no está el producto con ese código. prod: si está con ese
+     * código.
+     */
     public Producto buscarProducto(String codigo) { 
         Producto prod = null;
         
@@ -77,12 +95,20 @@ public class ListaProductos {
         }
     }
 
+    /**
+     * Devuelve toda la lista de productos.
+     * @return prodsList.
+     */
     public ArrayList<Producto> getProductos() {
         ArrayList<Producto> prodsList = new ArrayList<>();
         prodsList.addAll(listaP.values());
         return prodsList;
     }
     
+    /**
+     * Devuelve la cantidad de productos que hay.
+     * @return n proveniente de la función privada getN.
+     */
     public int totalProductos(){
             return this.getN();
     }
