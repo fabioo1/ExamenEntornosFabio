@@ -50,6 +50,10 @@ public class ListaProductos {
      */
     public Producto addProducto(Producto prod) {
         
+        if ((prod.getcode()==null) || (prod.getcode().isEmpty())) {
+            return null;
+        }
+        
         if (listaP.containsKey(prod.getcode())) {
             // System.out.println("Producto con código duplicado");
             return null;
@@ -66,6 +70,10 @@ public class ListaProductos {
      * @return prod si la cadena a analizar no es null, sino devuelve null.
      */
     public Producto eliminarProducto(String codigo) { 
+        
+        if ((codigo==null) || (codigo.isEmpty())) {
+            return null;
+        }
         
         Producto prod = buscarProducto(codigo);
         if (prod != null) {
@@ -86,6 +94,10 @@ public class ListaProductos {
      */
     public Producto buscarProducto(String codigo) { 
         Producto prod = null;
+        
+        if ((codigo==null) || (codigo.isEmpty())) {
+            return null;
+        }
         
         if (!listaP.containsKey(codigo)) {
             return prod;
